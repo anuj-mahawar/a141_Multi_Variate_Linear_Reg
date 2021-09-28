@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Air Temperature (in K)</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="float" name="process_temp" id="process_temp" placeholder="Process Temperature (in K)">
+            <input type="float" name="rotational_speed" id="rotational_speed" placeholder="Rotational Speed (in rpm)">
+            <input type="float" name="hdf" id="hdf" placeholder="HDF">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
